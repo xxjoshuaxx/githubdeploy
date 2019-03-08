@@ -1,0 +1,26 @@
+<div *ngIf="showCourseForm">
+    COURSE FORM
+    <div class="left">
+        <form  >
+
+        <input type="text" placeholder="course" #name name = "course" [(ngModel)] = "course.course">
+        <input type="text" placeholder="faculty" #faculty name = "faculty"  [(ngModel)] = "course.faculty">
+      
+        <button (click)= "save(name.value)">Save</button>
+        <button (click)= "cancel()">cancel</button>
+
+        </form>
+      </div>
+
+</div>
+
+
+<div *ngIf="showCourseList" >
+     COURSE LIST
+  <div *ngFor="let course of courses">  
+    <a (click) = "selectCourse(course);"> {{course.course}}</a>
+  </div>
+
+  <button (click)= "add()">Add</button>
+
+</div>
